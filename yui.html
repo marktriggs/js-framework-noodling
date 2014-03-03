@@ -1,0 +1,59 @@
+<html>
+<head>
+  <style>
+   .tracks {
+     width: 500px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 0;
+   }
+   
+
+   .tracks li {
+     list-style-type: none;
+     line-height: 2em;
+     background-color: #efefef;
+     border: 1px solid #ababab;
+     border-collapse: collapse;
+     padding: 10px;
+   }
+
+   .playing { 
+     font-weight: bold; 
+   }
+
+   .volume-container {
+     background-color: #ababab;
+     width: 500px;
+     height: 2em;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+   .volume {
+     background-color: blue;
+     width: 100%;
+     height: 2em;
+   }
+  </style>
+</head>
+<body>
+  <script type="text/x-handlebars-template" id="playlist-template">
+    <ul class="tracks">
+      {{#each tracks}}
+      <li {{#if isPlaying}}class="playing"{{/if}}>{{track}}</li>
+      {{/each}}
+    </ul>
+
+    <div class="volume-container"><div class="volume" style="width: {{volume}}%"></div></div>
+  </script>
+
+
+  <div id="playlist-container">
+
+  </div>
+
+  <script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
+  <script src="yui.js"></script>
+</body>
+</html>
